@@ -1,0 +1,38 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "css-loader": "^6.7.3",
+    "i": "^0.3.6",
+    "isomorphic-fetch": "^2.2.1",
+    "js-cookie": "^2.2.1",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
+    "next": "^9.0.5",
+    "npm": "^6.11.3",
+    "nprogress": "^0.2.0",
+    "prop-types": "^15.7.2",
+    "query-string": "^6.8.3",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-facebook-login": "^4.1.1",
+    "react-google-login": "^5.0.5",
+    "react-quill": "^1.3.5",
+    "react-render-html": "^0.6.0",
+    "reactstrap": "^8.0.1",
+    "short-crypt": "^2.1.1",
+    "simple-encryptor": "^4.0.0",
+    "style-loader": "^3.3.1"
+  }
+}

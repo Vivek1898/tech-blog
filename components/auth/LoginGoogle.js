@@ -1,11 +1,16 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import Router from 'next/router';
+import dynamic from "next/dynamic";
 import GoogleLogin from 'react-google-login';
-import { gapi } from 'gapi-script';
+//import { gapi } from 'gapi-script';
+//const {gapi} =require ('gapi-script');
+// const gapi2 = dynamic(() => import("gapi-script"), { ssr: false });
+import { gapi } from 'gapi-cjs';
 import { loginWithGoogle, authenticate, isAuth } from '../../actions/auth';
 import { GOOGLE_CLIENT_ID } from '../../config';
-import SocialButton from "./SocialButton";
+//import SocialButton from "./SocialButton";
+// const {gapi}=gapi2;
 const LoginGoogle = () => {
     useEffect(() => {
         const initClient = () => {

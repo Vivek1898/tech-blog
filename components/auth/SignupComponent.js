@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { signup, isAuth, preSignup } from '../../actions/auth';
 import Router from 'next/router';
 import Link from 'next/link';
-// import LoginGoogle from './LoginGoogle';
+import LoginGoogle from './LoginGoogle';
 // import LoginFacebook from './LoginFacebook';
 
 const SignupComponent = () => {
@@ -99,7 +99,7 @@ const SignupComponent = () => {
             {showError()}
             {showLoading()}
             {showMessage()}
-            {/* <LoginGoogle /> */}
+            <LoginGoogle />
             {/* <LoginFacebook /> */}
             {showForm && signupForm()}
             <br />

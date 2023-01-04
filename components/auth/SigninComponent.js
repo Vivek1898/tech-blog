@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { signin, authenticate, isAuth } from '../../actions/auth';
 import Router from 'next/router';
 import Link from 'next/link';
-// import LoginGoogle from './LoginGoogle';
+ import LoginGoogle from './LoginGoogle';
 // import LoginFacebook from './LoginFacebook';
 
 const SigninComponent = () => {
@@ -90,7 +90,7 @@ const SigninComponent = () => {
             {showError()}
             {showLoading()}
             {showMessage()}
-            {/* <LoginGoogle /> */}
+            <LoginGoogle />
             {/* <LoginFacebook /> */}
             {showForm && signinForm()}
             <br />

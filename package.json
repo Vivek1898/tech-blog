@@ -33,8 +33,6 @@
     "react-render-html": "^0.6.0",
     "react-social-login": "^3.4.16",
     "reactstrap": "^8.0.1",
-    "short-crypt": "^2.1.1",
-    "simple-encryptor": "^4.0.0",
     "style-loader": "^3.3.1"
   }
 }

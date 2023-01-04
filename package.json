@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@netlify/plugin-nextjs": "^4.29.4",
     "@zeit/next-css": "^1.0.1",
     "css-loader": "^6.7.3",
     "dotenv": "^16.0.3",
@@ -20,7 +21,7 @@
     "js-cookie": "^2.2.1",
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.24.0",
-    "next": "^9.0.5",
+    "next": "^9.5.5",
     "npm": "^6.11.3",
     "nprogress": "^0.2.0",
     "prop-types": "^15.7.2",

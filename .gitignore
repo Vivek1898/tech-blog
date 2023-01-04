@@ -1,5 +1,4 @@
 node_modules
 .next
-next.config.js
+
 .env
-config.js

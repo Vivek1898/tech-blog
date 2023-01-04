@@ -99,8 +99,8 @@ const SignupComponent = () => {
             {showError()}
             {showLoading()}
             {showMessage()}
-            {/* <LoginGoogle />
-            <LoginFacebook /> */}
+            {/* <LoginGoogle /> */}
+            {/* <LoginFacebook /> */}
             {showForm && signupForm()}
             <br />
             <Link href="/auth/password/forgot">

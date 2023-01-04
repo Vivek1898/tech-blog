@@ -90,8 +90,8 @@ const SigninComponent = () => {
             {showError()}
             {showLoading()}
             {showMessage()}
-            {/* <LoginGoogle />
-            <LoginFacebook /> */}
+            {/* <LoginGoogle /> */}
+            {/* <LoginFacebook /> */}
             {showForm && signinForm()}
             <br />
             <Link href="/auth/password/forgot">

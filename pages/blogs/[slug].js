@@ -85,7 +85,7 @@ const SingleBlog = ({ blog, query }) => {
                 <main>
                     <article>
                         <div className="container-fluid">
-                            <section>
+                            {/* <section>
                                 <div className="row" style={{ marginTop: '-30px' }}>
                                     <img
                                         src={`${API}/blog/photo/${blog.slug}`}
@@ -93,11 +93,11 @@ const SingleBlog = ({ blog, query }) => {
                                         className="img img-fluid featured-image"
                                     />
                                 </div>
-                            </section>
+                            </section> */}
 
                             <section>
                                 <div className="container">
-                                    <h1 className="display-2 pb-3 pt-3 text-center font-weight-bold">{blog.title}</h1>
+                                    <h1 className="display-5 pb-3 pt-3 text-center font-weight-bold title-text">{blog.title}</h1>
                                     <p className="lead mt-3 mark">
                                         Written by{' '}
                                         <Link href={`/profile/${blog.postedBy.username}`}>

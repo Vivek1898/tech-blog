@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { withRouter } from "next/router";
+import Router from 'next/router';
 import Layout from "./../components/Layout";
 import { useState } from "react";
 import { listBlogsWithCategoriesAndTags } from "./../actions/blog";
@@ -140,10 +141,10 @@ const Blogs = ({
                 </h1>
               </div>
               <section>
-                <div className="pb-5 text-center">
+                {/* <button onClick={()=>Router.push("categories/codeforces")}>Leetcode</button> */}
+                <div className="pb-5 text-center top-cat">
                   {showAllCategories()}
-                  <br />
-                  {showAllTags()}
+                
                 </div>
               </section>
             </header>
@@ -257,3 +258,5 @@ Blogs.getInitialProps = () => {
 };
 
 export default withRouter(Blogs);
+
+

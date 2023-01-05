@@ -21,16 +21,16 @@ const Blogs = ({
       <title>Coding blogs | {APP_NAME}</title>
       <meta
         name="description"
-        content="Programming blogs and tutorials on react node next vue php laravel and web developoment"
+        content="Solve Daily contest problems from leetcode codechef codeforces geeksforgeeks spoj hackerrank hackerearth"
       />
       <link rel="canonical" href={`${DOMAIN}${router.pathname}`} />
       <meta
         property="og:title"
-        content={`Latest web developoment tutorials | ${APP_NAME}`}
+        content={`Code daily coding problems | ${APP_NAME}`}
       />
       <meta
         property="og:description"
-        content="Programming blogs and tutorials on react node next vue php laravel and web developoment"
+        content="Solve Daily contest problems from leetcode codechef codeforces geeksforgeeks spoj hackerrank hackerearth"
       />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={`${DOMAIN}${router.pathname}`} />

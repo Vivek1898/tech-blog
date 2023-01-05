@@ -34,22 +34,32 @@ const Header = () => {
   return (
     <React.Fragment>
 
-      <Navbar color="light" light expand="md" navbar>
+      <Navbar color="light" light expand="md" navbar className="fixed-top stick">
         <Link href="/">
-          <NavLink className="font-weight-bold ">BLOG</NavLink>
+          <NavLink className="font-weight-bold ">Acode</NavLink>
         </Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
+        
             <React.Fragment>
              
 
-              <NavItem>
-                <Link href="/contact">
-                  <NavLink className="hidden-xs">Contact</NavLink>
-                </Link>
-              </NavItem>
-            </React.Fragment>
+             <NavItem>
+               <Link href="/">
+                 <NavLink className="hidden-xs">Blog</NavLink>
+               </Link>
+             </NavItem>
+           </React.Fragment>
+           <React.Fragment>
+             
+
+             <NavItem>
+               <Link href="/contact">
+                 <NavLink className="hidden-xs">Contact</NavLink>
+               </Link>
+             </NavItem>
+           </React.Fragment>
 
             {!isAuth() && (
               <React.Fragment>
@@ -68,15 +78,23 @@ const Header = () => {
 
             {isAuth() && isAuth().role === 1 && (
               <NavItem>
-                <Link href="/user">
+                <Link href="/admin">
                   <NavLink>{`${isAuth().name}'s Dashboard`}</NavLink>
                 </Link>
               </NavItem>
             )}
 
-            {isAuth() && isAuth().role === 1 && (
+            {isAuth() && isAuth().role === 0 && (
               <NavItem>
-                <Link href="/admin">
+                <Link href="/viewer">
+                  <NavLink>{`${isAuth().name}'s Dashboard`}</NavLink>
+                </Link>
+              </NavItem>
+              
+            )}
+             {isAuth() && isAuth().role === 2 && (
+              <NavItem>
+                <Link href="/editor">
                   <NavLink>{`${isAuth().name}'s Dashboard`}</NavLink>
                 </Link>
               </NavItem>

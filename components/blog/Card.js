@@ -7,8 +7,9 @@ const Card = ({ blog }) => {
   const showBlogCategories = (blog) =>
     blog.categories.map((c, i) => (
       <Link key={i} href={`/categories/${c.slug}`}>
-        {c.name}
-      </Link>
+        {/* <small class="font-weight-bold"> {c.name}</small> */}
+        <a className="btn btn-outline-danger btn-sm mr-2">{c.name }   </a>
+      </Link> 
     ));
 
   const showBlogTags = (blog) =>
@@ -19,7 +20,7 @@ const Card = ({ blog }) => {
     ));
 
   return (
-    <div className="lead pb-4">
+    <div className="lead ">
       {/* <header>
                 <Link href={`/blogs/${blog.slug}`}>
                     <a>
@@ -86,16 +87,17 @@ const Card = ({ blog }) => {
               />
             </div>
             <div class="p-2 blog-container">
+          
               <div
                 href="#!"
-                class="blog-category text-uppercase py-1 px-2 rounded-lg"
+                class="text-uppercase"
               >
-                <small class="font-weight-bold">
+                {/* <small class="font-weight-bold">
                 Solved { " "} 
-                </small>
-                <small class="font-weight-bold">
-                 {showBlogCategories(blog)}
-                </small>
+                </small> */}
+                <div className="btn btn-outline-success btn-sm">Solved</div>{" "}
+                 {showBlogCategories(blog)}  
+            
               </div>
               <h4 class="mt-2 font-weight-bold">
                 <Link href={`/blogs/${blog.slug}`}>

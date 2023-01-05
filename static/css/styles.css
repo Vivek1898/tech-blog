@@ -1122,8 +1122,13 @@ img{
     font-size: 1.2rem;
 
   }
+  .smallSize{
+    font-size: 2.5rem !important;
+  }
 }
-
+.stick{
+  position: sticky;
+}
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap");
 body {
 	font-family: "Roboto", sans-serif;
@@ -1142,7 +1147,7 @@ body {
 	box-shadow: 0 12px 17px rgba(129, 140, 151, 0.1);
 }
 .blog-card .blog-image {
-	width: 50%;
+	   width: 35%;
 	height: auto;
 	position: relative;
 }

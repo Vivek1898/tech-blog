@@ -13,10 +13,10 @@ const Category = ({ category, blogs, query,categories,tags }) => {
             <title>
                 {category.name} | {APP_NAME}
             </title>
-            <meta name="description" content={`Best programming tutorials on ${category.name}`} />
+            <meta name="description" content={`Solved coding problems from ${category.name}`} />
             <link rel="canonical" href={`${DOMAIN}/categories/${query.slug}`} />
             <meta property="og:title" content={`${category.name}| ${APP_NAME}`} />
-            <meta property="og:description" content={`Best programming tutorials on ${category.name}`} />
+            <meta property="og:description" content={`Solved coding problems from ${category.name}`} />
             <meta property="og:type" content="website" />
             <meta property="og:url" content={`${DOMAIN}/categories/${query.slug}`} />
             <meta property="og:site_name" content={`${APP_NAME}`} />

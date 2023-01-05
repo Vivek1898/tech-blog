@@ -28,7 +28,7 @@ const Blogs = ({
       <title>Programming blogs | {APP_NAME}</title>
       <meta
         name="description"
-        content="Programming blogs and tutorials on react node next vue php laravel and web developoment"
+        content="Solve Daily contest problems from leetcode codechef codeforces geeksforgeeks spoj hackerrank hackerearth"
       />
       <link rel="canonical" href={`${DOMAIN}${router.pathname}`} />
       <meta
@@ -37,7 +37,7 @@ const Blogs = ({
       />
       <meta
         property="og:description"
-        content="Programming blogs and tutorials on react node next vue php laravel and web developoment"
+        content="Solve Daily contest problems from leetcode codechef codeforces geeksforgeeks spoj hackerrank hackerearth"
       />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={`${DOMAIN}${router.pathname}`} />
@@ -136,7 +136,7 @@ const Blogs = ({
           <div className="container-fluid">
             <header>
               <div className="col-md-12 pt-3">
-                <h1 className="display-4 font-weight-bold text-center">
+                <h1 className="display-4 font-weight-bold text-center smallSize mb-4">
                 Daily Code Blogs
                 </h1>
               </div>

@@ -3,6 +3,7 @@ import { signup, isAuth, preSignup } from '../../actions/auth';
 import Router from 'next/router';
 import Link from 'next/link';
 import LoginGoogle from './LoginGoogle';
+import toast, { Toaster } from 'react-hot-toast';
 // import LoginFacebook from './LoginFacebook';
 
 const SignupComponent = () => {
@@ -15,13 +16,14 @@ const SignupComponent = () => {
         message: '',
         showForm: true
     });
+    const[loadingf, setloadingf] = useState(false);
 
     const { name, email, password, error, loading, message, showForm } = values;
 
     useEffect(() => {
         isAuth() && Router.push(`/`);
     }, []);
-
+   
     const handleSubmit = e => {
         e.preventDefault();
         // console.table({ name, email, password, error, loading, message, showForm });
@@ -42,6 +44,9 @@ const SignupComponent = () => {
                     message: data.message,
                     showForm: false
                 });
+                //toast("Signup Success!")
+                setloadingf(true);
+         //    Router.push(`/signin`)
             }
         });
     };
@@ -53,10 +58,13 @@ const SignupComponent = () => {
     const showLoading = () => (loading ? <div className="alert alert-info">Loading...</div> : '');
     const showError = () => (error ? <div className="alert alert-danger">{error}</div> : '');
     const showMessage = () => (message ? <div className="alert alert-info">{message}</div> : '');
-
+    const showLoadingf = () => (loadingf ? <button className="btn btn-outline-success mb-3 btn-lg" onClick={()=> Router.push('/signin')}>Login</button> : '');
     const signupForm = () => {
         return (
+           
+
             <form onSubmit={handleSubmit}>
+              
                 <div className="form-group">
                     <input
                         value={name}
@@ -99,13 +107,14 @@ const SignupComponent = () => {
             {showError()}
             {showLoading()}
             {showMessage()}
+            {showLoadingf()}
             <LoginGoogle />
             {/* <LoginFacebook /> */}
             {showForm && signupForm()}
             <br />
-            <Link href="/auth/password/forgot">
+            {/* <Link href="/auth/password/forgot">
                 <a className="btn btn-outline-danger btn-sm">Forgot password</a>
-            </Link>
+            </Link> */}
         </React.Fragment>
     );
 };

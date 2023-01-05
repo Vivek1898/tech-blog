@@ -15,13 +15,13 @@ const Tag = ({ tag, blogs, query, categories, tags }) => {
       </title>
       <meta
         name="description"
-        content={`Best programming tutorials on ${tag.name}`}
+        content={`Solved coding problems from ${tag.name}`}
       />
       <link rel="canonical" href={`${DOMAIN}/categories/${query.slug}`} />
       <meta property="og:title" content={`${tag.name}| ${APP_NAME}`} />
       <meta
         property="og:description"
-        content={`Best programming tutorials on ${tag.name}`}
+        content={`Solved coding problems from ${tag.name}`}
       />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={`${DOMAIN}/categories/${query.slug}`} />

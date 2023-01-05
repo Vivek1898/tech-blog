@@ -9,7 +9,7 @@ import { GOOGLE_CLIENT_ID } from "./config";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: {GOOGLE_CLIENT_ID},
+  apiKey: GOOGLE_CLIENT_ID,
   authDomain: "tech-blog-7.firebaseapp.com",
   projectId: "tech-blog-7",
   storageBucket: "tech-blog-7.appspot.com",

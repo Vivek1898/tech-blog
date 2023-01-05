@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import GoogleLogin from 'react-google-login';
 //import { gapi } from 'gapi-script';
 //const {gapi} =require ('gapi-script');
-// const gapi2 = dynamic(() => import("gapi-script"), { ssr: false });
+ //const gapi2 = dynamic(() => import("gapi-script"), { ssr: false });
 import { gapi } from 'gapi-cjs';
 import { loginWithGoogle, authenticate, isAuth } from '../../actions/auth';
 import { GOOGLE_CLIENT_ID } from '../../config';
@@ -13,13 +13,16 @@ import { GOOGLE_CLIENT_ID } from '../../config';
 // const {gapi}=gapi2;
 const LoginGoogle = () => {
     useEffect(() => {
-        const initClient = () => {
-              gapi.client.init({
-              clientId:{GOOGLE_CLIENT_ID},
-              scope: ''
-            });
-         };
-         gapi.load('client:auth2', initClient);
+        if (typeof window !== "undefined") {
+            const initClient = () => {
+                gapi.client.init({
+                clientId:{GOOGLE_CLIENT_ID},
+                scope: ''
+              });
+           };
+           gapi.load('client:auth2', initClient);
+          }
+      
      });
     const responseGoogle = response => {
          console.log(response);

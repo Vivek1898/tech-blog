@@ -170,14 +170,14 @@ export const resetPassword = resetInfo => {
         .catch(err => console.log(err));
 };
 
-export const loginWithGoogle = user => {
+export const loginWithGoogle = user2 => {
     return fetch(`${API}/google-login`, {
         method: 'POST',
         headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(user)
+        body: JSON.stringify(user2)
     })
         .then(response => {
             return response.json();

@@ -44,6 +44,7 @@ const LoginGoogle = () => {
     };
 
     return (
+        
         <div className="pb-3">
              {/* <SocialButton
       provider="google"

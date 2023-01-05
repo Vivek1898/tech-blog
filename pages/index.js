@@ -25,7 +25,7 @@ const Blogs = ({
 }) => {
   const head = () => (
     <Head>
-      <title>Programming blogs | {APP_NAME}</title>
+      <title>Daily Coding | {APP_NAME}</title>
       <meta
         name="description"
         content="Solve Daily contest problems from leetcode codechef codeforces geeksforgeeks spoj hackerrank hackerearth"
@@ -33,7 +33,7 @@ const Blogs = ({
       <link rel="canonical" href={`${DOMAIN}${router.pathname}`} />
       <meta
         property="og:title"
-        content={`Latest web developoment tutorials | ${APP_NAME}`}
+        content={`Solve daily coding problems | ${APP_NAME}`}
       />
       <meta
         property="og:description"

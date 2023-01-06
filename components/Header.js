@@ -36,7 +36,7 @@ const Header = () => {
 
       <Navbar color="light" light expand="md" navbar className="fixed-top stick">
         <Link href="/">
-          <NavLink className="font-weight-bold ">Acode</NavLink>
+          <NavLink className="font-weight-bold ">AcodeDaily</NavLink>
         </Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>

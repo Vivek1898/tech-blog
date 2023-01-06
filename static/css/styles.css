@@ -1043,10 +1043,10 @@
         19px 19px rgba(0, 0, 0, 0.04), 1.25rem 1.25rem rgba(0, 0, 0, 0.04);
 }
 
-.ql-syntax{
+/* .ql-syntax{
   background-color: black !important;
   color: whitesmoke !important;
-}
+} */
 
 img{
   max-width: 100% !important;

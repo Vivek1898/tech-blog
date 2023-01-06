@@ -107,7 +107,7 @@ const Card = ({ blog }) => {
                 </Link>
               </h4>
               <p class="text-muted">
-              {renderHTML(blog.excerpt)}
+              {/* {renderHTML(blog.excerpt)} */}
               </p>
               <div class="blog-footer d-flex justify-content-between align-items-center border-top">
                 <div>

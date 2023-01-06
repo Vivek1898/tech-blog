@@ -1,3 +1,5 @@
+import hljs from 'highlight.js';
+
 export const QuillModules = {
     toolbar: [
         [{ header: '1' }, { header: '2' }, { header: [3, 4, 5, 6] }, { font: [] }],
@@ -7,8 +9,13 @@ export const QuillModules = {
         ['link','image', 'video'],
         // ['link', 'image', 'video'],
         ['clean'],
-        ['code-block']
-    ]
+        ['code-block'],
+        
+    ],
+    syntax: {
+        highlight: (text) => hljs.highlightAuto(text).value,
+      },
+  
 };
 
 export const QuillFormats = [

@@ -1043,10 +1043,10 @@
         19px 19px rgba(0, 0, 0, 0.04), 1.25rem 1.25rem rgba(0, 0, 0, 0.04);
 }
 
-.ql-syntax{
+/* .ql-syntax{
   background-color: black !important;
   color: yellow !important;
-}
+} */
 
 img{
   max-width: 100% !important;
@@ -1125,14 +1125,14 @@ img{
   .smallSize{
     font-size: 2.5rem !important;
   }
-  .ql-video{
+  iframe.ql-video{
     
     height: auto !important;
   
   }
 }
 
-.ql-video{
+iframe.ql-video{
   width: 100% !important;
   height: 500px !important;
 

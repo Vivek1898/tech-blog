@@ -8,7 +8,9 @@ import renderHTML from 'react-render-html';
 import moment from 'moment';
 import SmallCard from '../../components/blog/SmallCard';
 import DisqusThread from '../../components/DisqusThread';
-
+//import 'highlight.js/styles/monokai-sublime.css';
+import { start } from 'nprogress';
+import hljs from 'highlight.js';
 const SingleBlog = ({ blog, query }) => {
     const [related, setRelated] = useState([]);
 
@@ -24,6 +26,7 @@ const SingleBlog = ({ blog, query }) => {
 
     useEffect(() => {
         loadRelated();
+        fixEditor();
     }, []);
 
     const head = () => (
@@ -77,6 +80,13 @@ const SingleBlog = ({ blog, query }) => {
             </div>
         );
     };
+    const fixEditor = () => {
+        document.querySelectorAll('.ql-syntax').forEach(el => {
+            // then highlight each
+            hljs.highlightElement(el);
+          });
+          
+    }
 
     return (
         <React.Fragment>
@@ -119,6 +129,8 @@ const SingleBlog = ({ blog, query }) => {
                         <div className="container">
                             <section>
                                 <div className="col-md-12 lead">{renderHTML(blog.body)}</div>
+                                {/* <button onClick={fixEditor}>start</button> */}
+                              
                             </section>
                         </div>
 

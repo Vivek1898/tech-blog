@@ -8,6 +8,7 @@ import { getCategories } from "../../actions/category";
 import { getTags } from "../../actions/tag";
 import { createBlog } from "../../actions/blog";
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
+import hljs from 'highlight.js';
 // import "../../node_modules/react-quill/dist/quill.snow.css";
 import { QuillModules, QuillFormats } from "../../helpers/quill";
 
@@ -23,6 +24,10 @@ const CreateBlog = ({ router }) => {
       return false;
     }
   };
+
+  hljs.configure({
+    languages: ['javascript', 'ruby', 'python', 'rust'],
+  });
 
   const [categories, setCategories] = useState([]);
   const [tags, setTags] = useState([]);

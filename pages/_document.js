@@ -50,10 +50,12 @@ class MyDocument extends Document {
           <script async src="https://www.googletagmanager.com/gtag/js?id=G-4MXJTG1279"></script>
           <script dangerouslySetInnerHTML={this.setGoogleTags()} />
           <script src="https://accounts.google.com/gsi/client" async defer></script>
+        
         </Head>
         <body>
           <Main />
           <NextScript />
+          
         </body>
       </Html>
     );

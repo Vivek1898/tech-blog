@@ -9,8 +9,12 @@ import moment from 'moment';
 import SmallCard from '../../components/blog/SmallCard';
 import DisqusThread from '../../components/DisqusThread';
 //import 'highlight.js/styles/monokai-sublime.css';
-import { start } from 'nprogress';
+
 import hljs from 'highlight.js';
+import  Router  from 'next/router';
+import NProgress from "nprogress";
+const ans =Router.onRouteChangeComplete = url => NProgress.done();
+
 const SingleBlog = ({ blog, query }) => {
     const [related, setRelated] = useState([]);
 
@@ -26,7 +30,7 @@ const SingleBlog = ({ blog, query }) => {
 
     useEffect(() => {
         loadRelated();
-        fixEditor();
+       fixEditor();
     }, []);
 
     const head = () => (
@@ -50,6 +54,8 @@ const SingleBlog = ({ blog, query }) => {
     );
 
     const showBlogCategories = blog =>
+   
+
         blog.categories.map((c, i) => (
             <Link key={i} href={`/categories/${c.slug}`}>
                 <a className="btn btn-primary mr-1 ml-1 mt-3">{c.name}</a>
@@ -64,6 +70,7 @@ const SingleBlog = ({ blog, query }) => {
         ));
 
     const showRelatedBlog = () => {
+
         return related.map((blog, i) => (
             <div className="col-md-4" key={i}>
                 <article>
@@ -80,6 +87,14 @@ const SingleBlog = ({ blog, query }) => {
             </div>
         );
     };
+
+    useEffect(() => {
+        document.querySelectorAll('.ql-syntax').forEach(el => {
+            // then highlight each
+            hljs.highlightElement(el);
+          });
+    }, [showRelatedBlog]);
+      
     const fixEditor = () => {
         document.querySelectorAll('.ql-syntax').forEach(el => {
             // then highlight each
@@ -104,7 +119,6 @@ const SingleBlog = ({ blog, query }) => {
                                     />
                                 </div>
                             </section> */}
-
                             <section>
                                 <div className="container">
                                     <h1 className="display-5 pb-3 pt-3 text-center font-weight-bold title-text">{blog.title}</h1>

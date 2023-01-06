@@ -20,8 +20,8 @@ const UserProfile = ({ user, blogs, query }) => {
             <meta property="og:url" content={`${DOMAIN}/profile/${query.username}`} />
             <meta property="og:site_name" content={`${APP_NAME}`} />
 
-            <meta property="og:image" content={`${DOMAIN}/static/images/seoblog.jpg`} />
-            <meta property="og:image:secure_url" content={`${DOMAIN}/static/images/seoblog.jpg`} />
+            <meta property="og:image" content={`${DOMAIN}/static/images/seoblog.jpeg`} />
+            <meta property="og:image:secure_url" content={`${DOMAIN}/static/images/seoblog.jpeg`} />
             <meta property="og:image:type" content="image/jpg" />
             <meta property="fb:app_id" content={`${FB_APP_ID}`} />
         </Head>

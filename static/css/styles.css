@@ -1125,6 +1125,17 @@ img{
   .smallSize{
     font-size: 2.5rem !important;
   }
+  .ql-video{
+    
+    height: auto !important;
+  
+  }
+}
+
+.ql-video{
+  width: 100% !important;
+  height: 500px !important;
+
 }
 .stick{
   position: sticky;

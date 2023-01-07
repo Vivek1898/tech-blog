@@ -50,7 +50,8 @@ class MyDocument extends Document {
           <script async src="https://www.googletagmanager.com/gtag/js?id=G-4MXJTG1279"></script>
           <script dangerouslySetInnerHTML={this.setGoogleTags()} />
           <script src="https://accounts.google.com/gsi/client" async defer></script>
-        
+          <script src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-copy-to-clipboard/build/react-copy-to-clipboard.js"></script>
         </Head>
         <body>
           <Main />

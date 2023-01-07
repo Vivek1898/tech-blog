@@ -7,8 +7,8 @@ const SmallCard = ({ blog }) => {
     return (
         <div className="card">
             <section>
-                <Link href={`/blogs/${blog.slug}`} >
-                    <a>
+              
+                    <a href={`/blogs/${blog.slug}`}>
                         <img
                             className="img img-fluid"
                             style={{ height: '250px', width: '100%' }}
@@ -16,16 +16,16 @@ const SmallCard = ({ blog }) => {
                             alt={blog.title}
                         />
                     </a>
-                </Link>
+               
             </section>
 
             <div className="card-body">
                 <section>
-                    <Link href={`/blogs/${blog.slug}`}>
-                        <a>
+                   
+                        <a href={`/blogs/${blog.slug}`}>
                             <h5 className="card-title">{blog.title}</h5>
                         </a>
-                    </Link>
+                   
                     {/*<div className="card-text">{renderHTML(blog.excerpt)}</div>*/}
                 </section>
             </div>

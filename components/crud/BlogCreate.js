@@ -7,6 +7,7 @@ import { getCookie, isAuth } from "../../actions/auth";
 import { getCategories } from "../../actions/category";
 import { getTags } from "../../actions/tag";
 import { createBlog } from "../../actions/blog";
+// import Editor from "../../node_modules/rich-markdown-editor/dist/index.js";
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 import hljs from 'highlight.js';
 // import "../../node_modules/react-quill/dist/quill.snow.css";
@@ -234,6 +235,12 @@ const CreateBlog = ({ router }) => {
             onChange={handleBody}
           />
         </div>
+
+        {/* <Editor
+           
+            defaultValue={body}
+            onChange={handleBody}
+          /> */}
 
         <div>
           <button type="submit" className="btn btn-primary">

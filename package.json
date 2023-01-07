@@ -31,6 +31,7 @@
     "prop-types": "^15.7.2",
     "query-string": "^6.8.3",
     "react": "^16.9.0",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^16.9.0",
     "react-facebook-login": "^4.1.1",
     "react-google-login": "^5.2.2",
@@ -39,6 +40,8 @@
     "react-render-html": "^0.6.0",
     "react-social-login": "^3.4.16",
     "react-toastify": "^8.0.0",
-    "reactstrap": "^8.0.1"
+    "reactstrap": "^8.0.1",
+    "rich-markdown-editor": "^11.21.3",
+    "use-copy": "^0.0.2"
   }
 }

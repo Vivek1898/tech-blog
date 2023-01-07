@@ -9,10 +9,11 @@ import moment from 'moment';
 import SmallCard from '../../components/blog/SmallCard';
 import DisqusThread from '../../components/DisqusThread';
 //import 'highlight.js/styles/monokai-sublime.css';
-
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 import hljs from 'highlight.js';
 import  Router  from 'next/router';
 import NProgress from "nprogress";
+import useCopy from 'use-copy';
 const ans =Router.onRouteChangeComplete = url => NProgress.done();
 
 const SingleBlog = ({ blog, query }) => {
@@ -87,12 +88,94 @@ const SingleBlog = ({ blog, query }) => {
             </div>
         );
     };
+    function insertAfter(el0, el1) {
+        el0.parentNode.insertBefore(el1, el0.nextSibling);
+    }
+    const [copyText2, setCopyText] = useState('');
+    const [copied, copy, setCopied] = useCopy(copyText2);
+    function myFunction() {
+        // Get the text field
+        setCopyText(" ");
+        var copyText = document.getElementsByClassName("copydata");
+       // console.log(copyText[0].innerText)
+        const copied=copyText[0].innerText;
+       // console.log(copied);
+        // document.getElementsByClassName("copydata").forEach( function (el) {
+        //     console.log(el.innerText);
+        // });
+     // console.log(copyText);
+     // return;
+        // Select the text field
+        // copy();
+        // setCopyText(copied);
+        // console.log(copied);
+      
+        // setTimeout(() => {
+        //     setCopied(false);
+        //   }, 1000);
+         
+      //  CopyToClipboard(copyText2);
+        navigator.clipboard.writeText(copied)
+        // copyText[0].innerText.select();
+        // copied.setSelectionRange(0, 99999); // For mobile devices
+      
+        //  // Copy the text inside the text field
+        // navigator.clipboard.writeText(copied.value);
+      
+        // Alert the copied text
+        alert("Copied");
+      }
+      useEffect(() => {
+        const el2 = document.createElement('button');
+
+        // ✅ Add classes to element
+            el2.classList.add( 'btn-primary','copyme');
+        
+        // ✅ Add text content to element
+                el2.innerText = 'Copy code';
+        // setInterval(() => {
+       
+        //             const someElementsItems=    document.querySelectorAll(".ql-syntax");
+        //             console.log(someElementsItems[someElementsItems.length -1])
+        //        const og=  someElementsItems[someElementsItems.length -1];
+        //        og.classList.add( 'copydata');
+        //          //  og.appendChild(el2);
+        //          insertAfter(og, el2)
+        //            const element = document.getElementsByClassName("copyme");
+        //            element[0].addEventListener("click", myFunction);
+        // }, 1000);
+                      const someElementsItems=    document.querySelectorAll(".ql-syntax");
+                    console.log(someElementsItems[someElementsItems.length -1])
+               const og=  someElementsItems[someElementsItems.length -1];
+               og.classList.add( 'copydata');
+                 //  og.appendChild(el2);
+                 insertAfter(og, el2)
+                   const element = document.getElementsByClassName("copyme");
+                   element[0].addEventListener("click", myFunction);
+      
+      }, []);
 
     useEffect(() => {
+//         const el2 = document.createElement('button');
+
+// // ✅ Add classes to element
+//     el2.classList.add( 'btn-primary','copyme');
+
+// // ✅ Add text content to element
+//         el2.innerText = 'Click me!';
         document.querySelectorAll('.ql-syntax').forEach(el => {
             // then highlight each
             hljs.highlightElement(el);
+           // el.appendChild(el2);
           });
+//       const someElementsItems=    document.querySelectorAll(".ql-syntax");
+//       console.log(someElementsItems[someElementsItems.length -1])
+//  const og=  someElementsItems[someElementsItems.length -1];
+//  og.classList.add( 'copydata');
+//    //  og.appendChild(el2);
+//    insertAfter(og, el2)
+//      const element = document.getElementsByClassName("copyme");
+//      element[0].addEventListener("click", myFunction);
     }, [showRelatedBlog]);
       
     const fixEditor = () => {

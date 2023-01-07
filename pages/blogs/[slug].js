@@ -14,6 +14,7 @@ import hljs from 'highlight.js';
 import  Router  from 'next/router';
 import NProgress from "nprogress";
 import useCopy from 'use-copy';
+import useClippy from 'use-clippy';
 const ans =Router.onRouteChangeComplete = url => NProgress.done();
 
 const SingleBlog = ({ blog, query }) => {
@@ -91,14 +92,22 @@ const SingleBlog = ({ blog, query }) => {
     function insertAfter(el0, el1) {
         el0.parentNode.insertBefore(el1, el0.nextSibling);
     }
-    const [copyText2, setCopyText] = useState('');
-    const [copied, copy, setCopied] = useCopy(copyText2);
+    // const [copyText2, setCopyText] = useState('');
+    // const [copied, copy, setCopied] = useCopy(copyText2);
+    const [clipboard, setClipboard] = useClippy();
     function myFunction() {
         // Get the text field
-        setCopyText(" ");
+        // setCopyText(" ");
         var copyText = document.getElementsByClassName("copydata");
        // console.log(copyText[0].innerText)
-        const copied=copyText[0].innerText;
+        const copied=copyText[0];
+        setClipboard(copied.innerText);
+        alert("Copied");
+        return;
+        // copied.focus();
+        // copied.select();
+        // console.log( copied.setSelectionRange(0, 99999))
+        return;
        // console.log(copied);
         // document.getElementsByClassName("copydata").forEach( function (el) {
         //     console.log(el.innerText);
@@ -115,7 +124,7 @@ const SingleBlog = ({ blog, query }) => {
         //   }, 1000);
          
       //  CopyToClipboard(copyText2);
-        navigator.clipboard.writeText(copied)
+        // navigator.clipboard.writeText(copied)
         // copyText[0].innerText.select();
         // copied.setSelectionRange(0, 99999); // For mobile devices
       

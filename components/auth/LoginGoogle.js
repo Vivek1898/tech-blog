@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import Router from 'next/router';
 import dynamic from "next/dynamic";
-import GoogleLogin from 'react-google-login';
+// import GoogleLogin from 'react-google-login';
 //import { gapi } from 'gapi-script';
 //const {gapi} =require ('gapi-script');
  //const gapi2 = dynamic(() => import("gapi-script"), { ssr: false });

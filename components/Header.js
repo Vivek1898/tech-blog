@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Router from "next/router";
 import NProgress from "nprogress";
@@ -34,7 +34,7 @@ const Header = () => {
   return (
     <React.Fragment>
 
-      <Navbar color="light" light expand="md" navbar className="fixed-top stick">
+      {/* <Navbar color="light" light expand="md" navbar className="fixed-top stick">
         <Link href="/">
           <NavLink className="font-weight-bold ">AcodeDaily</NavLink>
         </Link>
@@ -119,7 +119,7 @@ const Header = () => {
             </NavItem>
   )}
 <NavItem>
-{/* <Search /> */}
+
 <div  className="check">
       <Search />
       </div>
@@ -127,7 +127,110 @@ const Header = () => {
 
           </Nav>
         </Collapse>
-      </Navbar>
+      </Navbar> */}
+
+      <div class="navManual fixed-top stick">
+        <input type="checkbox" id="navManual-check"/>
+        <div class="navManual-header">
+          <div class="navManual-title">
+          <Link href="/">
+            AcodeDaily
+            </Link>
+          </div>
+        </div>
+        <div class="navManual-btn">
+          <label for="navManual-check">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+        
+        <div class="navManual-links">
+            <ul>
+          <li>   <Link href="/">
+                 <a className="hidden-xs">Blog</a>
+               </Link>
+               </li>
+          <li>   <Link href="/contact">
+                 <a className="hidden-xs">Contact</a>
+               </Link></li>
+               {!isAuth() && (
+              <React.Fragment>
+                <li>
+                  <Link href="/signin">
+                    <a>Signin</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/signup">
+                    <a>Signup</a>
+                  </Link>
+                </li>
+                </React.Fragment>
+             
+            )}
+
+
+{isAuth() && isAuth().role === 1 && (
+              <li>
+                <Link href="/admin">
+                  <a>{`${isAuth().name}'s Dashboard`}</a>
+                </Link>
+              </li>
+            )}
+
+            {isAuth() && isAuth().role === 0 && (
+              <li>
+                <Link href="/viewer">
+                  <a>{`${isAuth().name}'s Dashboard`}</a>
+                </Link>
+              </li>
+              
+            )}
+             {isAuth() && isAuth().role === 2 && (
+              <li>
+                <Link href="/editor">
+                  <a>{`${isAuth().name}'s Dashboard`}</a>
+                </Link>
+              </li>
+              
+            )}
+
+            {isAuth() && (
+              <li>
+                <a
+                  style={{ cursor: "pointer" }}
+                  onClick={() => signout(() => Router.replace(`/signin`))}
+                >
+                  Signout
+                </a>
+              </li>
+            )}
+  {isAuth() && isAuth().role === 1 && (
+    <li>
+              <a href="/user/crud/blog" className="btn btn-primary text-light">
+                Write a blog
+              </a>
+            </li>
+  )}
+<li>
+
+<div  className="check">
+      <Search />
+      </div>
+</li>
+
+
+          <a class="icon">
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-linkedin"></i>
+            <i class="fa fa-youtube"></i>
+
+          </a>
+            </ul>
+        </div>
+      </div>
       
 
       

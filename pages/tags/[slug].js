@@ -86,11 +86,11 @@ const Tag = ({ tag, blogs, query, categories, tags }) => {
                   <Search />
                   <br/>
                   <div class="list">
-                    <h3>Categories</h3>
+                  <h3 class="font-medium leading-tight text-3xl mt-0 mb-2 text-black-900 uppercase font-bold">Categories</h3>
                     {showAllCategories()}
                     <br />
                     <br />
-                    <h3>Tags</h3>
+                    <h3 class="font-medium leading-tight text-3xl mt-0 mb-2 text-black-900 uppercase font-bold">Tags</h3>
                     {showAllTags()}
                   </div>
                 </div>

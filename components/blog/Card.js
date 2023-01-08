@@ -8,7 +8,10 @@ const Card = ({ blog }) => {
     blog.categories.map((c, i) => (
       <Link key={i} href={`/categories/${c.slug}`}>
         {/* <small class="font-weight-bold"> {c.name}</small> */}
-        <a className="btn btn-outline-danger btn-sm mr-2">{c.name }   </a>
+        {/* <a className="btn btn-outline-danger btn-sm mr-2">{c.name }   </a> */}
+        <li class="m-1">
+                         <a class="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out" >{c.name } </a>
+                     </li>
       </Link> 
     ));
 
@@ -76,7 +79,7 @@ const Card = ({ blog }) => {
             </section>
                 </div>
             </div> */}
-      <div class="row">
+      {/* <div class="row">
         <div class="col-md-8 offset-md-2">
           <div class="blog-card bg-white mb-4 overflow-hidden d-lg-flex rounded-lg position-relative">
             <div class="blog-image overflow-hidden d-flex align-items-center">
@@ -92,9 +95,7 @@ const Card = ({ blog }) => {
                 href="#!"
                 class="text-uppercase"
               >
-                {/* <small class="font-weight-bold">
-                Solved { " "} 
-                </small> */}
+               
                 <div className="btn btn-outline-success btn-sm">Solved</div>{" "}
                  {showBlogCategories(blog)}  
             
@@ -107,17 +108,11 @@ const Card = ({ blog }) => {
                 </Link>
               </h4>
               <p class="text-muted">
-              {/* {renderHTML(blog.excerpt)} */}
+        {renderHTML(blog.excerpt)}
               </p>
               <div class="blog-footer d-flex justify-content-between align-items-center border-top">
                 <div>
-                  {/* <a href="#!">
-                    <img
-                      src="images/user.jpg"
-                      alt=""
-                      class="blog-author shadow"
-                    />
-                  </a> */}
+                
                    <Link href={`/profile/${blog.postedBy.username}`}>
                         <a class="text-dark">{blog.postedBy.name}</a>
                     </Link>
@@ -128,7 +123,56 @@ const Card = ({ blog }) => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+   
+   <section class="mb-2">
+ 
+
+ <article class="max-w-sm mx-auto md:max-w-none grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:gap-16 items-center">
+     <a class="relative block group" >
+         <div class="absolute inset-0 bg-gray-800 hidden md:block  pointer-events-none" aria-hidden="true"></div>
+         <Link href={`/blogs/${blog.slug}`}>
+         <figure class="relative h-0 pb-[56.25%] md:pb-[75%] lg:pb-[56.25%] overflow-hidden ">
+             <img class="absolute inset-0 w-full h-full object-cover " src={`${API}/blog/photo/${blog.slug}`} width="200" height="200" alt="Blog post"/>
+         </figure>
+         </Link>
+     </a>
+     <div>
+         <header>
+             <div class="mb-3">
+                 <ul class="flex flex-wrap text-xs font-medium -m-1">
+                     <li class="m-1">
+                         <a class="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-purple-600 hover:bg-purple-700 transition duration-150 ease-in-out" >Solved</a>
+                     </li>
+                     {/* <li class="m-1">
+                         <a class="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out" >Engineering</a>
+                     </li> */}
+                     {showBlogCategories(blog)}
+                 </ul>
+             </div>
+             <h3 class="text-2xl lg:text-3xl font-bold leading-tight mb-2">
+             <Link href={`/blogs/${blog.slug}`}>
+                 <a class="hover:text-black-100 transition duration-150 ease-in-out" >{blog.title}</a>
+                 </Link>
+             </h3>
+         </header>
+         <p class="text-lg text-gray-400 flex-grow" > {renderHTML(blog.excerpt)}</p>
+         <footer class="flex items-center mt-4">
+             <a >
+                 <img class="rounded-full flex-shrink-0 mr-4" src="https://preview.cruip.com/open-pro/images/news-author-04.jpg" width="40" height="40" alt="Author 04"/>
+             </a>
+             <div>
+             <Link href={`/profile/${blog.postedBy.username}`}>
+                 <a class="font-medium text-gray-200 hover:text-gray-100 transition duration-150 ease-in-out" >{blog.postedBy.name}</a>
+                 </Link>
+                 <span class="text-gray-700"> - </span>
+                 <span class="text-gray-500">{moment(blog.updatedAt).fromNow()}</span>
+             </div>
+         </footer>
+     </div>
+ </article>    
+
+</section>
     </div>
   );
 };

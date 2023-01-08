@@ -1,7 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import getConfig from 'next/config';
 const { publicRuntimeConfig } = getConfig();
-
+// import "../static/css/global.css"
 class MyDocument extends Document {
   setGoogleTags() {
     if (publicRuntimeConfig.PRODUCTION) {
@@ -30,6 +30,7 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
           />
+           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
           {/*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/react-quill/0.4.1/quill.snow.css"/>*/}
           <link rel="stylesheet" href="/static/css/styles.css" />
           {/* <link
@@ -51,12 +52,17 @@ class MyDocument extends Document {
           <script dangerouslySetInnerHTML={this.setGoogleTags()} />
           <script src="https://accounts.google.com/gsi/client" async defer></script>
           <script src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
-<script src="https://unpkg.com/react-copy-to-clipboard/build/react-copy-to-clipboard.js"></script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+{/* <link rel="stylesheet" href="https://unpkg.com/flowbite@1.6.0/dist/flowbite.min.css" />
+<script src="https://unpkg.com/flowbite@1.6.0/dist/flowbite.min.js"></script> */}
+
+
         </Head>
         <body>
           <Main />
           <NextScript />
-          
+         
         </body>
       </Html>
     );

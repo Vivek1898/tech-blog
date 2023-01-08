@@ -22,11 +22,11 @@ const SmallCard = ({ blog }) => {
             <div className="card-body">
                 <section>
                    
-                        <a href={`/blogs/${blog.slug}`}>
-                            <h5 className="card-title">{blog.title}</h5>
+                        <a href={`/blogs/${blog.slug}`} class="hover:text-black-100 transition duration-150 ease-in-out">
+                            <h5 className=" blog-title font-medium leading-tight text-1xl mt-0 mb-2 text-black-900 uppercase font-bold">{blog.title}</h5>
                         </a>
                    
-                    {/*<div className="card-text">{renderHTML(blog.excerpt)}</div>*/}
+                    {/* <div className="card-text">{renderHTML(blog.excerpt)}</div> */}
                 </section>
             </div>
 

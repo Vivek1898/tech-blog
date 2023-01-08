@@ -9,7 +9,7 @@ import moment from 'moment';
 import SmallCard from '../../components/blog/SmallCard';
 import DisqusThread from '../../components/DisqusThread';
 //import 'highlight.js/styles/monokai-sublime.css';
-import {CopyToClipboard} from 'react-copy-to-clipboard';
+// import {CopyToClipboard} from 'react-copy-to-clipboard';
 import hljs from 'highlight.js';
 import  Router  from 'next/router';
 import NProgress from "nprogress";
@@ -138,7 +138,7 @@ const SingleBlog = ({ blog, query }) => {
         const el2 = document.createElement('button');
 
         // ✅ Add classes to element
-            el2.classList.add( 'btn-primary','copyme');
+            el2.classList.add( 'btn','btn-primary','mt-2','copyme');
         
         // ✅ Add text content to element
                 el2.innerText = 'Copy code';
@@ -213,7 +213,10 @@ const SingleBlog = ({ blog, query }) => {
                             </section> */}
                             <section>
                                 <div className="container">
-                                    <h1 className="display-5 pb-3 pt-3 text-center font-weight-bold title-text">{blog.title}</h1>
+                                {/* <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl text-center">
+<span class="block text-black-600 xl:inline"> {blog.title}</span>
+</h1> */}
+                                    <h1 className="display-4 pb-3 pt-3 text-center font-weight-bold title-text">{blog.title}</h1>
                                     <p className="lead mt-3 mark">
                                         Written by{' '}
                                         <Link href={`/profile/${blog.postedBy.username}`}>

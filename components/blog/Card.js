@@ -152,7 +152,7 @@ const Card = ({ blog }) => {
              </div>
              <h3 class="text-2xl lg:text-3xl font-bold leading-tight mb-2">
              <Link href={`/blogs/${blog.slug}`}>
-                 <a class="hover:text-black-100 transition duration-150 ease-in-out" >{blog.title}</a>
+                 <a class="hover:text-black-100 transition duration-150 ease-in-out card-hver" >{blog.title}</a>
                  </Link>
              </h3>
          </header>
@@ -163,7 +163,7 @@ const Card = ({ blog }) => {
              </a>
              <div>
              <Link href={`/profile/${blog.postedBy.username}`}>
-                 <a class="font-medium text-gray-200 hover:text-gray-100 transition duration-150 ease-in-out" >{blog.postedBy.name}</a>
+                 <a class="font-medium text-gray-900 hover:text-gray-500 transition duration-150 ease-in-out" >{blog.postedBy.name}</a>
                  </Link>
                  <span class="text-gray-700"> - </span>
                  <span class="text-gray-500">{moment(blog.updatedAt).fromNow()}</span>

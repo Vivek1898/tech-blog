@@ -18,6 +18,9 @@ body {
   margin: 0px;
   font-family: 'segoe ui';
 }
+.lead{
+  margin-bottom: 35px !important;
+}
 
 .navManual {
   height: 50px;
@@ -27,8 +30,11 @@ body {
   z-index: 1;
 }
 a:hover {
-  color: #0056b3 !important;
+  color: #fff;
   text-decoration: none !important;
+}
+.card-hver:hover {
+  color: indigo !important;
 }
 .navManual > .navManual-header {
   display: inline;

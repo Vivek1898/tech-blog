@@ -1,6 +1,9 @@
 import Layout from '../../../components/Layout';
 import Admin from '../../../components/auth/Admin';
-import BlogUpdate from '../../../components/crud/BlogUpdate';
+import dynamic from 'next/dynamic';
+
+const BlogUpdate = dynamic (()=>import("../../../components/crud/BlogUpdate"),{ssr:false});
+//import BlogUpdate from '../../../components/crud/BlogUpdate';
 import Link from 'next/link';
 
 const Blog = () => {

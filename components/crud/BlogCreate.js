@@ -243,7 +243,7 @@ const CreateBlog = ({ router }) => {
           /> */}
 
         <div>
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-secondary bg-dark">
             Publish
           </button>
         </div>

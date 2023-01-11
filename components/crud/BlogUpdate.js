@@ -25,7 +25,7 @@ const BlogUpdate = ({ router }) => {
         title: '',
         error: '',
         success: '',
-        formData: '',
+        formData:typeof window !== 'undefined' && new FormData(),
         title: '',
         body: '',
         loading: false
@@ -248,7 +248,7 @@ const BlogUpdate = ({ router }) => {
                 </div>
 
                 <div>
-                    <button type="submit" className="btn btn-primary">
+                    <button type="submit" className="btn btn-secondary bg-dark">
                         Update
                     </button>
                 </div>

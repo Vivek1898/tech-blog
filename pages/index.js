@@ -18,6 +18,7 @@ const Index = ({
   blogsLimit,
   blogSkip,
   router,
+  
 }) => {
   const head = () => (
     <Head>
@@ -29,11 +30,11 @@ const Index = ({
       <link rel="canonical" href={`${DOMAIN}${router.pathname}`} />
       <meta
         property="og:title"
-        content={`Solve daily coding problems | ${APP_NAME}`}
+        content={`Solve daily coding problems AcodeDaily  | ${APP_NAME}`}
       />
       <meta
         property="og:description"
-        content="Solve Daily contest problems from leetcode codechef codeforces geeksforgeeks spoj hackerrank hackerearth"
+        content="Solve Daily contest problems from leetcode codechef codeforces geeksforgeeks spoj hackerrank hackerearth AcodeDaily"
       />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={`${DOMAIN}${router.pathname}`} />
@@ -136,6 +137,8 @@ const Index = ({
       <React.Fragment>
         {head()}
       <Layout>
+
+
  <div>
 
  
@@ -239,23 +242,22 @@ const Index = ({
   
     };
 
-    Index.getInitialProps = () => {
+    Index.getInitialProps = async () => {
   let skip = 0;
   let limit = 5;
-  return listBlogsWithCategoriesAndTags(skip, limit).then((data) => {
-    if (data.error) {
-      console.log(data.error);
-    } else {
-      return {
-        blogs: data.blogs,
-        categories: data.categories,
-        tags: data.tags,
-        totalBlogs: data.size,
-        blogsLimit: limit,
-        blogSkip: skip,
-      };
-    }
-  });
+  const data = await listBlogsWithCategoriesAndTags(skip, limit);
+      if (data.error) {
+        console.log(data.error);
+      } else {
+        return {
+          blogs: data.blogs,
+          categories: data.categories,
+          tags: data.tags,
+          totalBlogs: data.size,
+          blogsLimit: limit,
+          blogSkip: skip,
+        };
+      }
 };
 export default withRouter(Index);
 

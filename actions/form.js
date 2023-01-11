@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-fetch';
 import { API } from '../config';
 
-export const emailContactForm = data => {
+export const emailContactForm = async data => {
     let emailEndpoint;
 
     if (data.authorEmail) {
@@ -10,16 +10,17 @@ export const emailContactForm = data => {
         emailEndpoint = `${API}/contact`;
     }
 
-    return fetch(`${emailEndpoint}`, {
-        method: 'POST',
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    })
-        .then(response => {
-            return response.json();
-        })
-        .catch(err => console.log(err));
+    try {
+        const response = await fetch(`${emailEndpoint}`, {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+        return await response.json();
+    } catch (err) {
+        return console.log(err);
+    }
 };

@@ -16,63 +16,67 @@ export const handleResponse = response => {
     }
 };
 
-export const preSignup = user => {
-    return fetch(`${API}/pre-signup`, {
-        method: 'POST',
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(user)
-    })
-        .then(response => {
-            return response.json();
-        })
-        .catch(err => console.log(err));
+export const preSignup = async user => {
+    try {
+        const response = await fetch(`${API}/pre-signup`, {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        });
+        return await response.json();
+    } catch (err) {
+        return console.log(err);
+    }
 };
 
-export const signup = user => {
-    return fetch(`${API}/signup`, {
-        method: 'POST',
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(user)
-    })
-        .then(response => {
-            return response.json();
-        })
-        .catch(err => console.log(err));
+export const signup = async user => {
+    try {
+        const response = await fetch(`${API}/signup`, {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        });
+        return await response.json();
+    } catch (err) {
+        return console.log(err);
+    }
 };
 
-export const signin = user => {
-    return fetch(`${API}/signin`, {
-        method: 'POST',
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(user)
-    })
-        .then(response => {
-            return response.json();
-        })
-        .catch(err => console.log(err));
+export const signin = async user => {
+    try {
+        const response = await fetch(`${API}/signin`, {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        });
+        return await response.json();
+    } catch (err) {
+        return console.log(err);
+    }
 };
 
-export const signout = next => {
+export const signout = async next => {
     removeCookie('token');
     removeLocalStorage('user');
     next();
 
-    return fetch(`${API}/signout`, {
-        method: 'GET'
-    })
-        .then(response => {
-            console.log('signout success');
-        })
-        .catch(err => console.log(err));
+    try {
+        const response = await fetch(`${API}/signout`, {
+            method: 'GET'
+        });
+        console.log('signout success');
+    } catch (err) {
+        return console.log(err);
+    }
 };
 
 // set cookie
@@ -140,62 +144,66 @@ export const updateUser = (user, next) => {
     }
 };
 
-export const forgotPassword = email => {
-    return fetch(`${API}/forgot-password`, {
-        method: 'PUT',
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(email)
-    })
-        .then(response => {
-            return response.json();
-        })
-        .catch(err => console.log(err));
+export const forgotPassword = async email => {
+    try {
+        const response = await fetch(`${API}/forgot-password`, {
+            method: 'PUT',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(email)
+        });
+        return await response.json();
+    } catch (err) {
+        return console.log(err);
+    }
 };
 
-export const resetPassword = resetInfo => {
-    return fetch(`${API}/reset-password`, {
-        method: 'PUT',
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(resetInfo)
-    })
-        .then(response => {
-            return response.json();
-        })
-        .catch(err => console.log(err));
+export const resetPassword = async resetInfo => {
+    try {
+        const response = await fetch(`${API}/reset-password`, {
+            method: 'PUT',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(resetInfo)
+        });
+        return await response.json();
+    } catch (err) {
+        return console.log(err);
+    }
 };
 
-export const loginWithGoogle = user2 => {
-    return fetch(`${API}/google-login`, {
-        method: 'POST',
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(user2)
-    })
-        .then(response => {
-            return response.json();
-        })
-        .catch(err => console.log(err));
+export const loginWithGoogle = async user2 => {
+    try {
+        const response = await fetch(`${API}/google-login`, {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(user2)
+        });
+        return await response.json();
+    } catch (err) {
+        return console.log(err);
+    }
 };
 
-export const loginWithFacebook = user => {
-    return fetch(`${API}/facebook-login`, {
-        method: 'POST',
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(user)
-    })
-        .then(response => {
-            return response.json();
-        })
-        .catch(err => console.log(err));
+export const loginWithFacebook = async user => {
+    try {
+        const response = await fetch(`${API}/facebook-login`, {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        });
+        return await response.json();
+    } catch (err) {
+        return console.log(err);
+    }
 };

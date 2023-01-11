@@ -103,16 +103,15 @@ const UserProfile = ({ user, blogs, query }) => {
     );
 };
 
-UserProfile.getInitialProps = ({ query }) => {
+UserProfile.getInitialProps = async ({ query }) => {
     // console.log(query);
-    return userPublicProfile(query.username).then(data => {
-        if (data.error) {
-            console.log(data.error);
-        } else {
-            // console.log(data);
-            return { user: data.user, blogs: data.blogs, query };
-        }
-    });
+    const data = await userPublicProfile(query.username);
+    if (data.error) {
+        console.log(data.error);
+    } else {
+        // console.log(data);
+        return { user: data.user, blogs: data.blogs, query };
+    }
 };
 
 export default UserProfile;

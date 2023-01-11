@@ -154,15 +154,14 @@ const Category = ({ category, blogs, query,categories,tags }) => {
     );
 };
 
-Category.getInitialProps = ({ query }) => {
-    return singleCategory(query.slug).then(data => {
-        if (data.error) {
-            console.log(data.error);
-        } else {
-            console.log(data.tags)
-            return { category: data.category, blogs: data.blogs, query,categories:data.categories,tags:data.tags };
-        }
-    });
+Category.getInitialProps = async ({ query }) => {
+    const data = await singleCategory(query.slug);
+  if (data.error) {
+    console.log(data.error);
+  } else {
+    console.log(data.tags);
+    return { category: data.category, blogs: data.blogs, query, categories: data.categories, tags: data.tags };
+  }
 };
 
 export default Category;

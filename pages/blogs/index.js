@@ -169,23 +169,22 @@ const Blogs = ({
   );
 };
 
-Blogs.getInitialProps = () => {
+Blogs.getInitialProps = async () => {
   let skip = 0;
   let limit = 10;
-  return listBlogsWithCategoriesAndTags(skip, limit).then((data) => {
-    if (data.error) {
-      console.log(data.error);
-    } else {
-      return {
-        blogs: data.blogs,
-        categories: data.categories,
-        tags: data.tags,
-        totalBlogs: data.size,
-        blogsLimit: limit,
-        blogSkip: skip,
-      };
-    }
-  });
+  const data = await listBlogsWithCategoriesAndTags(skip, limit);
+  if (data.error) {
+    console.log(data.error);
+  } else {
+    return {
+      blogs: data.blogs,
+      categories: data.categories,
+      tags: data.tags,
+      totalBlogs: data.size,
+      blogsLimit: limit,
+      blogSkip: skip,
+    };
+  }
 };
 
 export default withRouter(Blogs);
